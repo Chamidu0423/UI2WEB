@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brief description of your website. Easily Get the HTML CSS Code of Your Project! Image to HTML converter generates a source code from a given screenshot or JPEG/PNG. In just a few minutes, our Artificial intelligent technology generates the final HTML CSS code, and the result can be maintained by our no-code editor.">
+  <meta name="keywords" content="HTML CSS code, HTML CSS converter, Image to HTML, Image to code, Code generator, No-code editor , UI2WEB , Ui to Code , Ui to HTML">
+  <meta name="author" content="ui2web">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <title>UI2WEB</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/ac93582dac.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="icon" href="img/favicon.ico" style="border-radius: 50px;">
+  <style>
+    html, body {
+      width: 100%;
+      height:150%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(-45deg, #000000, #100227, #22012b, #001720, #000000);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    p {
+      color: #ebeaea;
+      font-family: Quicksand;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      margin: 20px;
+      padding: 40px;
+      background-color: #0000008a;
+      border-radius: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f5eded;
+      font-size: 30px;
+      font-family: Poppins;
+    }
+    
+    .heading h1 .sitename {
+      text-align: center;
+      font-size: 70px;
+      font-family: Poppins;
+    }
+    
+    
+    h2 {
+      text-align: center;
+      color: #f5eded;
+      font-size: 40px;
+      font-family: Quicksand;
+    }
+
+    .heading h1 {
+      text-align: center;
+      color: #f5eded;
+      font-size: 70px;
+      font-family: Poppins;
+    }
+
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+
+    .wrapper-no4 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper-no4 .button-bird {
+      width: 150px;
+      height: 60px;
+      background-color: #131335;
+      border-radius: 30px;
+      top: 50%;
+      opacity: 1;
+      transform: translateY(-50%);
+      padding: 0;
+      margin-top: 50px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .wrapper-no4 .button-bird__text {
+      text-align: center;
+      font-size: 20px;
+      font-family: Helvetica, Arial, sans-serif;
+      color: #feffffee;
+      position: absolute;
+      z-index: 1000;
+      top: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+    }
+
+    .wrapper-no4 .button-bird .feather {
+      position: absolute;
+      width: 18%;
+      left: 40%;
+      top: 12px;
+      display: none;
+      opacity: 0;
+      fill: #131335;
+    }
+    .wrapper-no4 .button-bird:hover {
+      background-color: #5906a7;
+      transition: all 0.2s linear 0.1s;
+    }
+    .wrapper-no4 .button-bird.active {
+      background-color: transparent;
+      transition: all 0.2s linear 0.1s;
+    }
+    .wrapper-no4 .button-bird.active .button-bird__text {
+      color: #131335;
+      animation: text-fade 1.5s 0.2s;
+    }
+    .wrapper-no4 .button-bird.active .feather {
+      display: block;
+      animation: feather-fade 1.5s linear 0.5s forwards;
+    }
+    @keyframes fly-cycle {
+      100% {
+        background-position: -360px 0;
+      }
+    }
+    @keyframes text-fade {
+      0% {
+        color: transparent;
+        opacity: 1;
+        top: -50%;
+        left: auto;
+      }
+      1% {
+        color: transparent;
+        opacity: 0;
+      }
+      50% {
+        color: transparent;
+        opacity: 0;
+      }
+      100% {
+        color: #131335;
+        opacity: 1;
+      }
+    }
+    @keyframes feather-fade {
+      0% {
+        top: -100px;
+        opacity: 0;
+      }
+      25% {
+        transform: rotate(10deg);
+        left: 30%;
+      }
+      50% {
+        transform: rotate(-5deg);
+        opacity: 1;
+        left: 45%;
+      }
+      75% {
+        transform: rotate(10deg);
+        left: 32%;
+      }
+      100% {
+        transform: rotate(0deg);
+        opacity: 1;
+        top: 12px;
+        left: 43%;
+      }
+    }
+
+    form {
+      background-color: #ffffffd2;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      max-width: 320px;
+      margin: auto;
+      box-shadow: 0 30px 30px -30px rgba(67, 3, 170, 0.658);
+    }
+
+    .form-title {
+      color: #000000;
+      font-size: 1.5rem;
+    }
+
+    .form-paragraph {
+      margin-top: 10px;
+      font-size: 0.9375rem;
+      color: rgb(105, 105, 105);
+    }
+
+    .drop-container {
+      background-color: #fff;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-top: 1.5rem;
+      border-radius: 10px;
+      border: 2px dashed rgb(171, 202, 255);
+      color: #444;
+      cursor: pointer;
+      transition: background .2s ease-in-out, border .2s ease-in-out;
+      max-width: 350px;
+    }
+
+    .drop-container:hover {
+      background: rgba(0, 140, 255, 0.164);
+      border-color: rgba(17, 17, 17, 0.616);
+    }
+
+    .drop-container:hover .drop-title {
+      color: #222;
+    }
+
+    .drop-title {
+      color: #444;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      transition: color .2s ease-in-out;
+    }
+
+    #file-input {
+      width: 100%;
+      max-width: 90%;
+      color: #444;
+      padding: 8px;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid rgba(8, 8, 8, 0.288);
+    }
+
+    #file-input::file-selector-button {
+      border: none;
+      background: #6507bd;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+    }
+
+    #file-input::file-selector-button:hover {
+      background: #5906a7;
+    }
+    #file-input::file-selector-button:active {
+      background: #16012b;
+    }
+
+    .nav-links {
+      display: flex;
+      position: fixed;
+      align-items: center;
+      width: 96%;
+      justify-content: space-between;
+      background: #000000da;
+      padding: 20px;
+      border-radius: 40px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      margin: 5px 15px;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .nav-img img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-items {
+      display: flex;
+    }
+
+    .nav-links li {
+      list-style: none;
+      margin: 0 12px;
+    }
+
+    .nav-links li a {
+      position: relative;
+      color: #f3f3f3;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .nav-links li a:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: #34efdf;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+    }
+
+    .nav-links li a:hover:before {
+      width: 100%;
+    }
+
+    .nav-links li.center a:before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links li.upward a:before {
+      width: 100%;
+      bottom: -5px;
+      opacity: 0;
+    }
+
+    .nav-links li.upward a:hover:before {
+      bottom: 0px;
+      opacity: 1;
+    }
+
+    .nav-links li.forward a:before {
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .nav-links li.forward a:hover:before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .nav-links {
+        width: fit-content;
+      }
+
+      .container {
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .nav-img img {
+        height: 30px;
+      }
+
+      #file-input {
+        width: 90%;
+      }
+
+      .button-bird {
+        width: 150px;
+        height: 50px;
+      }
+        
+      .button-bird__text {
+        font-size: 14px;
+      }
+
+    }
+    .carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+    }
+    ul.slides {
+      display: block;
+      position: relative;
+      height: 600px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      list-style: none;
+    }
+    .slides * {
+      user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    ul.slides input {
+      display: none; 
+    }
+    .slide-container { 
+      display: block; 
+    }
+    .slide-image {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      opacity: 0;
+      transition: all .7s ease-in-out;
+    }   
+    .slide-image img {
+      width: auto;
+      min-width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      font-size: 100px;
+      line-height: 600px;
+      color: #fff;
+    }
+    .carousel-controls label {
+      display: none;
+      position: absolute;
+      padding: 0 20px;
+      opacity: 0;
+      transition: opacity .2s;
+      cursor: pointer;
+    }
+    .slide-image:hover + .carousel-controls label{
+      opacity: 0.5;
+    }
+    .carousel-controls label:hover {
+      opacity: 1;
+    }
+    .carousel-controls .prev-slide {
+      width: 49%;
+      text-align: left;
+      left: 0;
+    }
+    .carousel-controls .next-slide {
+      width: 49%;
+      text-align: right;
+      right: 0;
+    }
+    .carousel-dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      z-index: 999;
+      text-align: center;
+    }
+    .carousel-dots .carousel-dot {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 0.5;
+      margin: 10px;
+    }
+    input:checked + .slide-container .slide-image {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 1s ease-in-out;
+    }
+    input:checked + .slide-container .carousel-controls label {
+         display: block; 
+    }
+    input#img-1:checked ~ .carousel-dots label#img-dot-1,
+    input#img-2:checked ~ .carousel-dots label#img-dot-2,
+    input#img-3:checked ~ .carousel-dots label#img-dot-3,
+    input#img-4:checked ~ .carousel-dots label#img-dot-4,
+    input#img-5:checked ~ .carousel-dots label#img-dot-5,
+    input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+    	opacity: 1;
+    }
+    input:checked + .slide-container .nav label { display: block; }
+
+    @media screen and (max-width: 768px) {
+      .carousel {
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+    
+      ul.slides {
+        height: 200px; 
+      }
+    
+      .carousel-controls {
+        font-size: 30px;
+        line-height: 200px;
+      }
+    
+      .carousel-controls .prev-slide,
+      .carousel-controls .next-slide {
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    .card-client {
+      background: #7012af;
+      width: 97%;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 4px solid #ec7add;
+      box-shadow: 0 0 20px rgba(5, 65, 187, 0.8);
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .card-client:hover {
+        transform: translateY(-10px);
+    }
+
+    .user-picture {
+        overflow: hidden;
+        object-fit: cover;
+        width: 5rem;
+        height: 5rem;
+        border: 4px solid #7cdacc;
+        border-radius: 999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .user-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 999px;
+    }
+
+    .name-client {
+        margin: 0;
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .name-client span {
+        display: block;
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    .social-media:before {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin: 20px 0;
+        background: #e8f3f1b2;
+    }
+
+    .social-media a {
+        position: relative;
+        margin-right: 15px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .social-media a:last-child {
+        margin-right: 0;
+    }
+
+    .social-media a svg {
+        width: 1.1rem;
+        fill: currentColor;
+    }
+
+    .tooltip-social {
+        background: #262626;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding: 0.5rem 0.4rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -90%);
+        transition: all 0.2s ease;
+        z-index: 1;
+    }
+
+    .tooltip-social:after {
+        content: " ";
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        border: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: transparent;
+        transform: translate(-50%, 100%);
+    }
+
+    .social-media a .tooltip-social:after {
+        border-top-color: #262626;
+    }
+
+    .social-media a:hover .tooltip-social {
+        opacity: 1;
+        transform: translate(-50%, -130%);
+    }
+
+    @media (max-width: 768px) {
+        .card-client {
+            width: 85%;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .user-picture {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        .name-client {
+            font-size: 16px;
+        }
+    }
+
+
+    @media (max-width: 576px) {
+        .card-client {
+            width: 85%;
+        }
+
+        .name-client {
+            font-size: 14px;
+        }
+    }
+
+    .footer {
+      background-color: #010411;
+      height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .footer p{
+      color: #6d6d6d;
+      font-size: 10px;
+    }
+    .copyright p{
+      color: #6d6d6d;
+      font-size: 10px;
+      text-align: right;
+    }
+    #feedback {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        width: 350px;
+        background-color: rgba(4, 16, 24, 0.801);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 20px;
+        box-shadow: 0 30px 30px -30px rgba(67, 3, 170, 0.315);
+        align-items: end;
+    }
+    #feedback .title {
+        color: rgb(134, 134, 134);
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #feedback input {
+        outline: 0;
+        border: 1px solid rgb(219, 213, 213);
+        padding: 8px 14px;
+        border-radius: 8px;
+        width: 100%;
+        height: 50px;
+    }
+    .form textarea {
+        border-radius: 8px;
+        width: calc(100% - 28px);
+        resize: none;
+        outline: 0;
+        padding: 8px 14px;
+        border: 1px solid rgb(219, 213, 213);
+        border-radius: 20px;
+    }
+    .form textarea:hover {
+        background-color: #ccdff5;
+    }
+    #feedback button {
+        align-self: flex-end;
+        padding: 8px;
+        outline: 0;
+        border: 0;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: royalblue;
+        color: #fff;
+        cursor: pointer;
+    }
+    #feedback button:hover {
+        background-color: blueviolet;
+        transition: all 0.2s linear 0.1s;
+    }
+    .paypal button:hover {
+      box-shadow: 0 0 20px rgba(5, 65, 187, 0.8);
+    }
+    .vertical-line {
+      height: 200px;
+      width: 1px;
+      background-color: #6d6d6d;
+    }
+  </style>
+  <script>
+    new WOW().init();
+</script>
+</head>
+<body>
+    <ul class="nav-links wow animate__animated animate__fadeInDown">
+      <div class="nav-img">
+        <li><a href="#home"><img src="img/src/logo.png" alt="logo"></a></li>
+      </div>
+      <div class="nav-items">
+        <li class="upward"><a href="#Guide">Guide</a></li>
+        <li class="center"><a href="#about">About me</a></li>
+        <li class="forward"><a href="#feedback">Feedback</a></li>
+        <li class="forward"><a href="#footer">Buy me a coffee <i class="fa-solid fa-mug-hot"></i></a></li>
+      </div>
+    </ul>
+  <div class="container wow animate__animated animate__zoomIn" id="home" style="margin-top: 60px;">
+    <div class="heading">
+    <h1>
+      <div class="sitename" style= "background-image: linear-gradient(to right, #030a66, #010a88, #e330e9, #fa63ff, #fdfdfd); -webkit-background-clip: text; background-clip: text;color: transparent;">UI 2 WEB</div> Converting magic Tool <picture>
+        <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.webp" type="image/webp">
+        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.gif" alt="✨" width="32" height="32">
+      </picture>
+    </h1>
+  </div>
+    <p>Easily Get the HTML CSS Code of Your Project!</p>
+    <p>Image to HTML converter generates a source code from a given screenshot or JPEG/PNG. In just a few minutes, our Artificial intelligent technology generates the final HTML CSS code, and the result can be maintained by our no-code editor.</p>
+  </div>
+  <div class="container wow animate__animated animate__fadeInUp" >
+    <h2>Let's try it yourself!</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <span class="form-title">Upload your UI</span>
+      <p class="form-paragraph">File should be an image</p>
+      <label for="file-input" class="drop-container">
+        <span class="drop-title">Choose UI here</span>
+        <input type="file" name="image" accept="image/png, image/jpeg, image/svg" id="file-input">
+      </label>
+      <div class="wrapper-no4">
+        <button class="button-bird" type="submit">
+          <p class="button-bird__text">SUBMIT</p>
+          <svg version="1.1" class="feather" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 75 38" style="enable-background:new 0 0 75 38;" xml:space="preserve">
+            <g>
+              <path d="M20.8,31.6c3.1-0.7,2.9-2.3,2,1c9.1,4.4,20.4,3.7,29.1-0.8l0,0c0.7-2.1,1-3.9,1-3.9c0.6,0.8,0.8,1.7,1,2.9
+                c4.1-2.3,7.6-5.3,10.2-8.3c0.4-2.2,0.4-4,0.4-4.1c0.6,0.4,0.9,1.2,1.2,2.1c4.5-6.1,5.4-11.2,3.7-13.5c1.1-2.6,1.6-5.4,1.2-7.7
+                c-0.5,2.4-1.2,4.7-2.1,7.1c-5.8,11.5-16.9,21.9-30.3,25.3c13-4,23.6-14.4,29.1-25.6C62.8,9,55.6,16.5,44.7,20.7
+                c2.1,0.7,3.5,1.1,3.5,1.6c-0.1,0.4-1.3,0.6-3.2,0.4c-7-0.9-7.1,1.2-16,1.5c1,1.3,2,2.5,3.1,3.6c-1.9-0.9-3.8-2.2-5.6-3.6
+                c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var el = document.querySelector(".button-bird");
+            var text = document.querySelector(".button-bird__text");
+  
+            el.addEventListener('click', function() {
+                el.classList.add('active');
+                console.log('true');
+                text.innerHTML = 'Wait...🪄<picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.gif" alt="✨" width="32" height="32"></picture>';
+            });
+        });
+    </script>
+    </form>
+  </div>
+  <div class="container wow animate__animated animate__zoomIn" id="Guide" >
+    <div>
+      <div class="carousel">
+        <h2>Guide</h2>
+        <ul class="slides">
+          <input type="radio" name="radio-buttons" id="img-1" checked />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="img/guide/i.gif">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-3" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-2" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-2" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="img/guide/ii.gif">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-1" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-3" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <input type="radio" name="radio-buttons" id="img-3" />
+          <li class="slide-container">
+            <div class="slide-image">
+              <img src="img/guide/iii.gif">
+            </div>
+            <div class="carousel-controls">
+              <label for="img-2" class="prev-slide">
+                <span>&lsaquo;</span>
+              </label>
+              <label for="img-1" class="next-slide">
+                <span>&rsaquo;</span>
+              </label>
+            </div>
+          </li>
+          <div class="carousel-dots">
+            <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+            <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+            <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container wow animate__animated animate__zoomIn" id="about" >
+    <h2>About me</h2>
+    <div class="card-client">     
+        <div class="user-picture">
+            <img src="https://media.licdn.com/dms/image/D4E03AQHEcXyfylX88w/profile-displayphoto-shrink_200_200/0/1683059156739?e=1713398400&v=beta&t=j92mxilNR7WOOUpa2xNpKJY0TvZPy1IE9itgpwHGINU" alt="User Picture">
+        </div>
+        <p class="name-client">Chamidu Dilshan
+            <span>undergraduate student of OUSL</span>
+        </p>
+        <div class="social-media">
+          <div class="social-media">
+            <a href="https://github.com/Chamidu0423" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.206 11.385.6.11.82-.263.82-.577 0-.285-.01-1.042-.015-2.045-3.338.724-4.042-1.28-4.042-1.28-.546-1.386-1.332-1.757-1.332-1.757-1.088-.743.083-.728.083-.728 1.204.085 1.837 1.237 1.837 1.237 1.07 1.835 2.808 1.305 3.494.997.11-.773.419-1.305.762-1.605-2.665-.302-5.466-1.332-5.466-5.93 0-1.31.465-2.384 1.236-3.227-.124-.302-.536-1.526.116-3.176 0 0 1.007-.322 3.3 1.23.957-.267 1.982-.4 3-.405 1.018.005 2.043.138 3 .405 2.29-1.552 3.294-1.23 3.294-1.23.654 1.65.242 2.874.118 3.176.773.843 1.234 1.917 1.234 3.227 0 4.61-2.806 5.624-5.475 5.92.43.37.815 1.102.815 2.22 0 1.605-.015 2.896-.015 3.287 0 .314.212.689.825.574C20.566 21.798 24 17.3 24 12c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              <span class="tooltip-social">GitHub</span>
+            </a>
+            <a href="https://chamidu0423.github.io/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M20 0H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 20H5v-2h3zm0-4H5v-2h3zm0-4H5V8h3zm0-4H5V4h3zm4 12H9v-2h3zm0-4H9v-2h3zm0-4H9V8h3zm0-4H9V4h3zm6 12h-3v-2h3zm0-4h-3v-2h3zm0-4h-3V8h3zm0-4h-3V4h3z"></path>
+              </svg>
+              <span class="tooltip-social">Website</span>
+            </a>
+            <a href="https://www.facebook.com/chamidu.dilshan.3597789" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+                </svg>
+                <span class="tooltip-social">Facebook</span>
+            </a>
+            <a href="https://www.linkedin.com/in/chamidu-dilshan-082b43274/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                </svg>
+                <span class="tooltip-social">LinkedIn</span>
+            </a>
+        </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer wow animate__animated animate__fadeInUp" id="footer" style="margin: 0 auto;">
+    <div class="col-1">
+      <div class="paypal">
+        <form action="https://www.paypal.com/cgi-bin/webscr" style="background: none; height: 100%; width: 100%; margin: 0; padding: 0;" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="CPGY8MNGGLRJU" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="image" src="img/src/donate-btn.png" style="width: 50%; height:50%; background: none;" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now"/>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="vertical-line"></div>
+    </div>
+    <div class="col-2">
+      <form class="form" id="feedback" action="https://formspree.io/f/mgegkzpb" method="POST">
+        <div class="title">Feedback</div>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit" title="Submit message">
+            <picture>
+                <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f48c/512.webp" type="image/webp">
+                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f48c/512.gif" alt="💌" width="32" height="32">
+            </picture>
+        </button>
+      </form>
+      <div class="copyright">
+        <p>All Rights Reserved &#169;</p>
+      </div>
+    </div>   
+  </div>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
