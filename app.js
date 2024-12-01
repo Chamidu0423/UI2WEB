@@ -11,7 +11,7 @@ const app = express();
 const upload = multer({ dest: 'uploads/' }); 
 
 const MODEL_NAME = "gemini-pro-vision";
-const API_KEY = "AIzaSyDpvpSYZeAWCkyCLAiCGJoDU3qwW5RQJtI";
+const API_KEY = "Replace with your Gemini API key";
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: MODEL_NAME });
