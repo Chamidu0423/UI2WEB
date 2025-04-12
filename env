@@ -1,0 +1,2 @@
+//rename this file with adding "." (example: .env)
+GEMINI_API_KEY = paste your gemini api key here
