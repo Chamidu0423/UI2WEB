@@ -6,7 +6,7 @@ const {
   const fs = require("fs");
   
   const MODEL_NAME = "gemini-pro-vision";
-  const API_KEY = "AIzaSyDpvpSYZeAWCkyCLAiCGJoDU3qwW5RQJtI";
+  const API_KEY = "";
   
   async function run() {
     const genAI = new GoogleGenerativeAI(API_KEY);
