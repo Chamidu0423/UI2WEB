@@ -33,5 +33,12 @@ or
 ```bash
 npm install --force
 ```
+(You should be create .env file at root and place your API key in it)
+
+```env
+
+API_KEY="Replace with your GeminiAPIkey"
+
+```
 
 ---
