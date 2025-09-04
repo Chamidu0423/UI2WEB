@@ -27,6 +27,9 @@ git clone https://github.com/Chamidu0423/UI2WEB-Design-to-Code-generater-AI.git
 cd UI2WEB-Design-to-Code-generater-AI
 ```
 ```bash
+npm install express
+```
+```bash
 npm install
 ```
 or
